@@ -48,10 +48,23 @@ public class WriteCSVFileWithHeader {
 	}
 	
 	public void write(Row row) {
+		//headerWritten = true; //quick fix
 		if (threadSafe)
 			lock.lock();
 		if (!headerWritten)
 			writeHeader(row);
+		out.write(row.getCells());
+		if (threadSafe)
+			lock.unlock();
+	}
+
+	//BDB: custom method to write crosswalk without header
+	public void writeF(Row row, boolean x) {
+		// headerWritten = true; //quick fix
+		if (threadSafe)
+			lock.lock();
+		// if (!headerWritten)
+		// 	writeHeader(row);
 		out.write(row.getCells());
 		if (threadSafe)
 			lock.unlock();

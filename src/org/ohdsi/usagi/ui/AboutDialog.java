@@ -61,7 +61,7 @@ public class AboutDialog extends JDialog {
 
 		JEditorPane text = new JEditorPane(
 				"text/html",
-				"Usagi is maintained by The Hyve (www.thehyve.nl), and originally developed by Martijn Schuemie" +
+				"Usagi is maintained by The Hyve (www.thehyve.nl), and originally developed by Bruno" +
 						"<br/>in <a href=\"http://ohdsi.org\">Observational Health Data Sciences and Informatics</a> (OHDSI)." +
 						"<br/><br/>For help, please review the <a href =\"http://www.ohdsi.org/web/wiki/doku.php?id=documentation:software:usagi\">Usagi Wiki</a>.");
 

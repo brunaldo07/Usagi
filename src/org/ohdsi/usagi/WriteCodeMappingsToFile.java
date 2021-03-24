@@ -25,10 +25,14 @@ import org.ohdsi.utilities.files.WriteCSVFileWithHeader;
  * Class for writing code mappings (source codes and mapped target concept(s)) to a CSV file.
  */
 public class WriteCodeMappingsToFile {
+	// private WriteCSVFile out;
 	private WriteCSVFileWithHeader out;
 
+
 	public WriteCodeMappingsToFile(String filename) {
+		// out = new WriteCSVFile(filename);
 		out = new WriteCSVFileWithHeader(filename);
+
 	}
 
 	public void write(CodeMapping codeMapping) {
@@ -44,6 +48,12 @@ public class WriteCodeMappingsToFile {
 			row.add("mappingStatus", codeMapping.mappingStatus.toString());
 			row.add("conceptId", targetConcept.conceptId);
 			row.add("comment", codeMapping.comment);
+
+			//to crosswalk
+			// Row row2 = new Row();
+			// row2.add("targetVocabulary",codeMapping.targetVocabulary);
+			// row2.add("targetConceptCode",codeMapping.targetConceptCode);
+			// row2.add("dummy",codeMapping.)
 			out.write(row);
 		}
 	}
