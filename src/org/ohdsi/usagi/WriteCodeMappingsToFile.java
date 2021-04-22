@@ -36,6 +36,28 @@ public class WriteCodeMappingsToFile {
 	}
 
 	public void write(CodeMapping codeMapping) {
+<<<<<<< Updated upstream
+=======
+		// List<Concept> targetConcepts;
+		// if (codeMapping.targetConcepts.size() == 0) {
+		// 	targetConcepts = new ArrayList<Concept>(1);
+		// 	targetConcepts.add(Concept.EMPTY_CONCEPT);
+		// } else
+		// 	targetConcepts = codeMapping.targetConcepts;
+		// for (Concept targetConcept : targetConcepts) {
+		// 	Row row = codeMapping.sourceCode.toRow();
+		// 	row.add("matchScore", codeMapping.matchScore);
+		// 	row.add("mappingStatus", codeMapping.mappingStatus.toString());
+		// 	row.add("conceptId", targetConcept.conceptId);
+		// 	row.add("comment", codeMapping.comment);
+
+			//to crosswalk
+			// Row row2 = new Row();
+			// row2.add("targetVocabulary",codeMapping.targetVocabulary);
+			// row2.add("targetConceptCode",codeMapping.targetConceptCode);
+			// row2.add("dummy",codeMapping.)
+
+>>>>>>> Stashed changes
 		List<MappingTarget> mappingTargets;
 		if (codeMapping.getTargetConcepts().size() == 0) {
 			mappingTargets = new ArrayList<>(1);
@@ -51,8 +73,12 @@ public class WriteCodeMappingsToFile {
 			row.add("statusSetBy", codeMapping.getStatusSetBy());
 			row.add("statusSetOn", codeMapping.getStatusSetOn());
 			row.add("conceptId", targetConcept.getConcept().conceptId);
+<<<<<<< Updated upstream
 			row.add("conceptName", targetConcept.getConcept().conceptName); // Redundant, not read in
 			row.add("domainId", targetConcept.getConcept().domainId); // Redundant, not read in
+=======
+			row.add("conceptName", targetConcept.getConcept().conceptName); // Never read in.
+>>>>>>> Stashed changes
 			row.add("mappingType", targetConcept.getMappingType().toString());
 			row.add("comment", codeMapping.getComment());
 			row.add("createdBy", targetConcept.getCreatedBy());
