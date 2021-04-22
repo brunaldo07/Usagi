@@ -121,7 +121,7 @@ public class ExportSourceToConceptMapDialog extends JDialog {
 
 				for (Concept targetConcept : targetConcepts) {
 					Row row = new Row();
-					row.add("source_code", mapping.sourceCode.sourceCode);
+					row.add("source_code", mapping.getSourceCode().sourceCode);
 					// row.add("source_concept_id", "0");
 					// row.add("source_vocabulary_id", sourceVocabularyIdField.getText());
 					// row.add("source_code_description", mapping.sourceCode.sourceName);
