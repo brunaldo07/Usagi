@@ -36,8 +36,6 @@ public class WriteCodeMappingsToFile {
 	}
 
 	public void write(CodeMapping codeMapping) {
-<<<<<<< Updated upstream
-=======
 		// List<Concept> targetConcepts;
 		// if (codeMapping.targetConcepts.size() == 0) {
 		// 	targetConcepts = new ArrayList<Concept>(1);
@@ -57,7 +55,6 @@ public class WriteCodeMappingsToFile {
 			// row2.add("targetConceptCode",codeMapping.targetConceptCode);
 			// row2.add("dummy",codeMapping.)
 
->>>>>>> Stashed changes
 		List<MappingTarget> mappingTargets;
 		if (codeMapping.getTargetConcepts().size() == 0) {
 			mappingTargets = new ArrayList<>(1);
@@ -73,12 +70,7 @@ public class WriteCodeMappingsToFile {
 			row.add("statusSetBy", codeMapping.getStatusSetBy());
 			row.add("statusSetOn", codeMapping.getStatusSetOn());
 			row.add("conceptId", targetConcept.getConcept().conceptId);
-<<<<<<< Updated upstream
-			row.add("conceptName", targetConcept.getConcept().conceptName); // Redundant, not read in
-			row.add("domainId", targetConcept.getConcept().domainId); // Redundant, not read in
-=======
 			row.add("conceptName", targetConcept.getConcept().conceptName); // Never read in.
->>>>>>> Stashed changes
 			row.add("mappingType", targetConcept.getMappingType().toString());
 			row.add("comment", codeMapping.getComment());
 			row.add("createdBy", targetConcept.getCreatedBy());
