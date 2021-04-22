@@ -1,0 +1,5 @@
+source_code,source_concept_id,source_vocabulary_id,source_code_description,target_concept_id,target_vocabulary_id,valid_start_date,valid_end_date,invalid_reason
+191888,0,,BMI,82112,TNX,1970-01-01,2099-12-31,
+100105,0,,BMI,82112,TNX,1970-01-01,2099-12-31,
+301991,0,,Body temperature,3020891,UMLS:LNC,1970-01-01,2099-12-31,
+100403,0,,Heart rate,3027018,UMLS:LNC,1970-01-01,2099-12-31,
