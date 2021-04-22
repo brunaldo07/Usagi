@@ -28,58 +28,36 @@ import org.ohdsi.utilities.files.WriteCSVFileWithHeader;
  * Class for writing code mappings (source codes and mapped target concept(s)) to a CSV file.
  */
 public class WriteCodeMappingsToFile {
-	// private WriteCSVFile out;
 	private WriteCSVFileWithHeader out;
 	private DecimalFormat scoreFormat = new DecimalFormat("####0.00", new DecimalFormatSymbols(Locale.US));
 
-
 	public WriteCodeMappingsToFile(String filename) {
-		// out = new WriteCSVFile(filename);
 		out = new WriteCSVFileWithHeader(filename);
-
 	}
 
 	public void write(CodeMapping codeMapping) {
-		List<Concept> targetConcepts;
-		if (codeMapping.targetConcepts.size() == 0) {
-			targetConcepts = new ArrayList<Concept>(1);
-			targetConcepts.add(Concept.EMPTY_CONCEPT);
-		} else
-			targetConcepts = codeMapping.targetConcepts;
-		for (Concept targetConcept : targetConcepts) {
-			Row row = codeMapping.sourceCode.toRow();
-			row.add("matchScore", codeMapping.matchScore);
-			row.add("mappingStatus", codeMapping.mappingStatus.toString());
-			row.add("conceptId", targetConcept.conceptId);
-			row.add("comment", codeMapping.comment);
-
-			//to crosswalk
-			// Row row2 = new Row();
-			// row2.add("targetVocabulary",codeMapping.targetVocabulary);
-			// row2.add("targetConceptCode",codeMapping.targetConceptCode);
-			// row2.add("dummy",codeMapping.)
-
-		// List<MappingTarget> mappingTargets;
-		// if (codeMapping.getTargetConcepts().size() == 0) {
-		// 	mappingTargets = new ArrayList<>(1);
-		// 	mappingTargets.add(new MappingTarget());
-		// } else {
-		// 	mappingTargets = codeMapping.getTargetConcepts();
-		// }
-		// for (MappingTarget targetConcept : mappingTargets) {
-		// 	Row row = codeMapping.getSourceCode().toRow();
-		// 	row.add("matchScore", scoreFormat.format(codeMapping.getMatchScore()));
-		// 	row.add("mappingStatus", codeMapping.getMappingStatus().toString());
-		// 	row.add("equivalence", codeMapping.getEquivalence().toString());
-		// 	row.add("statusSetBy", codeMapping.getStatusSetBy());
-		// 	row.add("statusSetOn", codeMapping.getStatusSetOn());
-		// 	row.add("conceptId", targetConcept.getConcept().conceptId);
-		// 	row.add("conceptName", targetConcept.getConcept().conceptName); // Never read in.
-		// 	row.add("mappingType", targetConcept.getMappingType().toString());
-		// 	row.add("comment", codeMapping.getComment());
-		// 	row.add("createdBy", targetConcept.getCreatedBy());
-		// 	row.add("createdOn", targetConcept.getCreatedTime());
-		// 	row.add("assignedReviewer", codeMapping.getAssignedReviewer());
+		List<MappingTarget> mappingTargets;
+		if (codeMapping.getTargetConcepts().size() == 0) {
+			mappingTargets = new ArrayList<>(1);
+			mappingTargets.add(new MappingTarget());
+		} else {
+			mappingTargets = codeMapping.getTargetConcepts();
+		}
+		for (MappingTarget targetConcept : mappingTargets) {
+			Row row = codeMapping.getSourceCode().toRow();
+			row.add("matchScore", scoreFormat.format(codeMapping.getMatchScore()));
+			row.add("mappingStatus", codeMapping.getMappingStatus().toString());
+			row.add("equivalence", codeMapping.getEquivalence().toString());
+			row.add("statusSetBy", codeMapping.getStatusSetBy());
+			row.add("statusSetOn", codeMapping.getStatusSetOn());
+			row.add("conceptId", targetConcept.getConcept().conceptId);
+			row.add("conceptName", targetConcept.getConcept().conceptName); // Redundant, not read in
+			row.add("domainId", targetConcept.getConcept().domainId); // Redundant, not read in
+			row.add("mappingType", targetConcept.getMappingType().toString());
+			row.add("comment", codeMapping.getComment());
+			row.add("createdBy", targetConcept.getCreatedBy());
+			row.add("createdOn", targetConcept.getCreatedTime());
+			row.add("assignedReviewer", codeMapping.getAssignedReviewer());
 			out.write(row);
 		}
 	}
