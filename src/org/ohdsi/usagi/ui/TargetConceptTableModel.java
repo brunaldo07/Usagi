@@ -10,9 +10,12 @@ import java.util.List;
 class TargetConceptTableModel extends AbstractTableModel {
     private static final long serialVersionUID = -4978479688021056281L;
 
-    private final String[] columnNames = {"Concept ID", "Concept name", "Domain", "Concept class", "Vocabulary", "Concept code",
-            "Valid start date", "Valid end date", "Invalid reason", "Standard concept", "Parents", "Children", "Mapping Type",
-            "Creation Provenance"};
+    // private final String[] columnNames = {"Concept ID", "Concept name", "Domain", "Concept class", "Vocabulary", "Concept code",
+    //         "Valid start date", "Valid end date", "Invalid reason", "Standard concept", "Parents", "Children", "Mapping Type",
+    //         "Creation Provenance"};
+    private final String[] columnNames = {"Concept ID", "Concept name", "Domain", "Vocabulary", "Concept code",
+            "Valid start date", "Valid end date", "Invalid reason"};
+    
     private List<MappingTarget> targetConcepts = new ArrayList<>();
 
     public TargetConceptTableModel() {
@@ -56,30 +59,30 @@ class TargetConceptTableModel extends AbstractTableModel {
                 return targetConcept.conceptName;
             case 2:
                 return targetConcept.domainId;
+            // case 3:
+            //     return targetConcept.conceptClassId;
             case 3:
-                return targetConcept.conceptClassId;
-            case 4:
                 return targetConcept.vocabularyId;
-            case 5:
+            case 4:
                 return targetConcept.conceptCode;
-            case 6:
+            case 5:
                 return targetConcept.validStartDate;
-            case 7:
+            case 6:
                 return targetConcept.validEndDate;
-            case 8:
+            case 7:
                 return targetConcept.invalidReason;
-            case 9:
-                return targetConcept.standardConcept;
-            case 10:
-                return targetConcept.parentCount;
-            case 11:
-                return targetConcept.childCount;
-            case 12:
-                return mappingTarget.getMappingType();
-            case 13:
-                if (mappingTarget.getCreatedTime() != 0L) {
-                    return String.format("%s (%tF)", mappingTarget.getCreatedBy(), mappingTarget.getCreatedTime());
-                }
+            // case 9:
+            //     return targetConcept.standardConcept;
+            // case 10:
+            //     return targetConcept.parentCount;
+            // case 11:
+            //     return targetConcept.childCount;
+            // case 12:
+            //     return mappingTarget.getMappingType();
+            // case 13:
+            //     if (mappingTarget.getCreatedTime() != 0L) {
+            //         return String.format("%s (%tF)", mappingTarget.getCreatedBy(), mappingTarget.getCreatedTime());
+            //     }
             default:
                 return "";
         }
