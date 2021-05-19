@@ -64,7 +64,7 @@ public class UsagiMain implements ActionListener {
 			Global.dbEngine.openForReading();
 		}
 
-		loadAuthor(Global.folder);
+		// loadAuthor(Global.folder);
 		loadVocabularyVersion(Global.folder);
 		Global.conceptClassIds = loadVectorFromFile(Global.folder + "/ConceptClassIds.txt");
 		Global.vocabularyIds = loadVectorFromFile(Global.folder + "/VocabularyIds.txt");
