@@ -108,9 +108,12 @@ public class MappingTablePanel extends JPanel implements DataChangeListener {
 	class CodeMapTableModel extends AbstractTableModel {
 		private static final long	serialVersionUID	= 169286268154988911L;
 
-		private String[]			defaultColumnNames	= { "Status", "Source code", "Source term", "Frequency", "Match score", "Concept ID", "Concept name",
-				"Domain", "Concept class", "Vocabulary", "Concept code", "Valid start date", "Valid end date", "Invalid reason", "Standard concept", "Parents",
-				"Children", "Assigned To", "Equivalence", "Comment", "Status Provenance" };
+		// private String[]			defaultColumnNames	= { "Status", "Source code", "Source term", "Frequency", "Match score", "Concept ID", "Concept name",
+		// 		"Domain", "Concept class", "Vocabulary", "Concept code", "Valid start date", "Valid end date", "Invalid reason", "Standard concept", "Parents",
+		// 		"Children", "Assigned To", "Equivalence", "Comment", "Status Provenance" };
+		private String[]			defaultColumnNames	= { "Status", "Source code", "Source term", "Frequency", 
+		"Match score", "Concept ID", "Concept name", "Domain", "Concept class", "Vocabulary", "Concept code",
+		 "Valid start date", "Valid end date", "Invalid reason"};
 		private String[]			columnNames			= defaultColumnNames;
 		private int					addInfoColCount		= 0;
 		private final int			ADD_INFO_START_COL	= 4;
@@ -193,26 +196,26 @@ public class MappingTablePanel extends JPanel implements DataChangeListener {
 						return targetConcept.validEndDate;
 					case 13:
 						return targetConcept.invalidReason;
-					case 14:
-						return targetConcept.standardConcept;
-					case 15:
-						return targetConcept.parentCount;
-					case 16:
-						return targetConcept.childCount;
-					case ASSIGNED_REVIEWER_COL:
-						return codeMapping.getAssignedReviewer();
-					case 18:
-						if (codeMapping.getEquivalence() != CodeMapping.Equivalence.UNREVIEWED) {
-							return codeMapping.getEquivalence();
-						} else {
-							return null;
-						}
-					case 19:
-						return codeMapping.getComment();
-					case 20:
-						if (codeMapping.getStatusSetOn() != 0L) {
-							return String.format("%s (%tF)", codeMapping.getStatusSetBy(), codeMapping.getStatusSetOn());
-						}
+					// case 14:
+					// 	return targetConcept.standardConcept;
+					// case 15:
+					// 	return targetConcept.parentCount;
+					// case 16:
+					// 	return targetConcept.childCount;
+					// case ASSIGNED_REVIEWER_COL:
+					// 	return codeMapping.getAssignedReviewer();
+					// case 18:
+					// 	if (codeMapping.getEquivalence() != CodeMapping.Equivalence.UNREVIEWED) {
+					// 		return codeMapping.getEquivalence();
+					// 	} else {
+					// 		return null;
+					// 	}
+					// case 19:
+					// 	return codeMapping.getComment();
+					// case 20:
+					// 	if (codeMapping.getStatusSetOn() != 0L) {
+					// 		return String.format("%s (%tF)", codeMapping.getStatusSetBy(), codeMapping.getStatusSetOn());
+					// 	}
 					default:
 						return "";
 				}
