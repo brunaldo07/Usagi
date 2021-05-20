@@ -53,6 +53,8 @@ public class MappingTablePanel extends JPanel implements DataChangeListener {
 		table = new UsagiTable(tableModel);
 		table.setRowSorter(new TableRowSorter<>(tableModel));
 		table.setPreferredScrollableViewportSize(new Dimension(1200, 200));
+		// intento de ajustar anchura 
+		// table.setPreferredSize(table.getPreferredSize());
 		table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
 		table.getSelectionModel().addListSelectionListener(event -> {
