@@ -122,7 +122,7 @@ public class UsagiMain implements ActionListener {
 		Global.mappingTablePanel = new MappingTablePanel();
 		Global.mappingDetailPanel = new MappingDetailPanel();
 		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, Global.mappingTablePanel, Global.mappingDetailPanel);
-		Global.mappingTablePanel.setMinimumSize(new Dimension(500, 100));
+		Global.mappingTablePanel.setMinimumSize(new Dimension(500, 200));
 		Global.mappingDetailPanel.setMinimumSize(new Dimension(500, 400));
 
 		main.add(splitPane, BorderLayout.CENTER);
