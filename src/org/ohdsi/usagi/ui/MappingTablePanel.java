@@ -114,7 +114,7 @@ public class MappingTablePanel extends JPanel implements DataChangeListener {
 		// 		"Domain", "Concept class", "Vocabulary", "Concept code", "Valid start date", "Valid end date", "Invalid reason", "Standard concept", "Parents",
 		// 		"Children", "Assigned To", "Equivalence", "Comment", "Status Provenance" };
 		private String[]			defaultColumnNames	= { "Status", "Source code", "Source term", "Frequency", 
-		"Match score", "Concept ID", "Concept name", "Domain", "Concept class", "Vocabulary", "Concept code",
+		"Match score", "Concept code", "Concept name","Domain", "Vocabulary",
 		 "Valid start date", "Valid end date", "Invalid reason"};
 		private String[]			columnNames			= defaultColumnNames;
 		private int					addInfoColCount		= 0;
@@ -180,23 +180,23 @@ public class MappingTablePanel extends JPanel implements DataChangeListener {
 						return codeMapping.getSourceCode().sourceFrequency == -1 ? "" : codeMapping.getSourceCode().sourceFrequency;
 					case 4:
 						return codeMapping.getMatchScore();
+					// case 5:
+					// 	return targetConcept.conceptId;
 					case 5:
-						return targetConcept.conceptId;
+						return targetConcept.conceptCode;
 					case 6:
 						return targetConcept.conceptName;
 					case 7:
 						return targetConcept.domainId;
+					// case 8:
+					// 	return targetConcept.conceptClassId;
 					case 8:
-						return targetConcept.conceptClassId;
-					case 9:
 						return targetConcept.vocabularyId;
-					case 10:
-						return targetConcept.conceptCode;
-					case 11:
+					case 9:
 						return targetConcept.validStartDate;
-					case 12:
+					case 10:
 						return targetConcept.validEndDate;
-					case 13:
+					case 11:
 						return targetConcept.invalidReason;
 					// case 14:
 					// 	return targetConcept.standardConcept;
