@@ -23,7 +23,7 @@ import javax.swing.*;
 
 import org.ohdsi.usagi.CodeMapping;
 import org.ohdsi.usagi.CodeMapping.MappingStatus;
-import org.ohdsi.usagi.ui.ExportSourceToConceptMapDialog;
+import org.ohdsi.usagi.ui.ExportCrosswalkDialog;
 import org.ohdsi.usagi.ui.Global;
 
 public class ExportCrosswalkAction extends AbstractAction {
@@ -59,7 +59,7 @@ public class ExportCrosswalkAction extends AbstractAction {
 			return;
 		}
 
-		ExportSourceToConceptMapDialog exportDialog = new ExportSourceToConceptMapDialog();
+		ExportCrosswalkDialog exportDialog = new ExportCrosswalkDialog();
 		exportDialog.setExportUnapproved(exportUnapproved);
 		exportDialog.setVisible(true);
 	}
