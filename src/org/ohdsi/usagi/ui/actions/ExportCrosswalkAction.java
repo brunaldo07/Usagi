@@ -33,8 +33,8 @@ public class ExportCrosswalkAction extends AbstractAction {
 	public ExportCrosswalkAction() {
 		putValue(Action.NAME, "Export crosswalk");
 		putValue(Action.SHORT_DESCRIPTION, "Export mapping to crosswalk");
-		putValue(Action.MNEMONIC_KEY, KeyEvent.VK_E);
-		putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_E, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+		putValue(Action.MNEMONIC_KEY, KeyEvent.VK_P);
+		putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_P, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
 	}
 
 	@Override
