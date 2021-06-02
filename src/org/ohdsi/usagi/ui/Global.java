@@ -51,7 +51,7 @@ public class Global {
 	public static AboutAction						aboutAction;
 	public static ExportSourceToConceptMapAction	exportAction;
 	public static ExportForReviewAction				exportForReviewAction;
-	public static ExportCrosswalk					exportCrosswalk;
+	public static ExportCrosswalkAction				exportCrosswalkAction;
 	public static RebuildIndexAction				rebuildIndexAction;
 	public static ExitAction						exitAction;
 	public static String							vocabularyVersion;
