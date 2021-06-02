@@ -30,7 +30,7 @@ public class ExportCrosswalk extends AbstractAction {
 
 	private static final long	serialVersionUID	= -1846753187468184738L;
 
-	public ExportSourceToConceptMapAction() {
+	public ExportCrosswalk() {
 		putValue(Action.NAME, "Export crosswalk");
 		putValue(Action.SHORT_DESCRIPTION, "Export mapping to crosswalk");
 		putValue(Action.MNEMONIC_KEY, KeyEvent.VK_E);
