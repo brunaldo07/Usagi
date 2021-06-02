@@ -97,7 +97,7 @@ public class UsagiMain implements ActionListener {
 		Global.saveAsAction.setEnabled(false);
 		Global.exportAction.setEnabled(false);
 		Global.exportForReviewAction.setEnabled(false);
-		Global.exportCrosswalk.setEnabled(false);
+		Global.exportCrosswalkAction.setEnabled(false);
 		Global.approveAction.setEnabled(false);
 		Global.flagAction.setEnabled(false);
 		Global.clearSelectedAction = new ClearSelectedAction();
