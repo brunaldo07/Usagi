@@ -77,6 +77,7 @@ public class UsagiMain implements ActionListener {
 		Global.importAction = new ImportAction();
 		Global.exportAction = new ExportSourceToConceptMapAction();
 		Global.exportForReviewAction = new ExportForReviewAction();
+		Global.exportCrosswalk = new ExportCrosswalk();
 		Global.saveAction = new SaveAction();
 		Global.saveAsAction = new SaveAsAction();
 		Global.approveAction = new ApproveAction();
@@ -96,6 +97,7 @@ public class UsagiMain implements ActionListener {
 		Global.saveAsAction.setEnabled(false);
 		Global.exportAction.setEnabled(false);
 		Global.exportForReviewAction.setEnabled(false);
+		Global.exportCrosswalk.setEnabled(false);
 		Global.approveAction.setEnabled(false);
 		Global.flagAction.setEnabled(false);
 		Global.clearSelectedAction = new ClearSelectedAction();
