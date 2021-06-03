@@ -121,6 +121,7 @@ public class ExportCrosswalkDialog extends JDialog {
 
 				for (Concept targetConcept : targetConcepts) {
 					Row row = new Row();
+					//Trim source prefixes if present
 					String original_code = mapping.getSourceCode().sourceCode;
 					String [] trim_code = original_code.split(":");
 					row.add("source_code", trim_code[trim_code.length-1]);
