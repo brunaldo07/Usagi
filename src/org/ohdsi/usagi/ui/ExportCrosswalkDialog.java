@@ -121,15 +121,10 @@ public class ExportCrosswalkDialog extends JDialog {
 
 				for (Concept targetConcept : targetConcepts) {
 					Row row = new Row();
-					row.add("source_code", mapping.getSourceCode().sourceCode);
-					// row.add("source_concept_id", "0");
-					// row.add("source_vocabulary_id", sourceVocabularyIdField.getText());
-					// row.add("source_code_description", mapping.sourceCode.sourceName);
-					// row.add("target_concept_id", targetConcept.conceptId);
+					String original_code = mapping.getSourceCode().sourceCode;
+					String [] trim_code = original_code.split(":");
+					row.add("source_code", trim_code[trim_code.length-1]);
 					row.add("target_vocabulary_id", targetConcept.conceptId == 0 ? "None" : targetConcept.vocabularyId + ":" +targetConcept.conceptCode);
-					// row.add("valid_start_date", "1970-01-01");
-					// row.add("valid_end_date", "2099-12-31");
-					// row.add("invalid_reason", "");
 					out.writeF(row,true);
 				}
 			}
